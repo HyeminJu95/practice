@@ -1,0 +1,41 @@
+"""add → commit -m→ push"""
+
+1. 로컬 저장소(local repo)를 원격저장소(remote repo)에 연결
+
+# remote-name 은 원격 저장소에 대한 별칭 , git address는 생성한 레파지토리의 URL 을 복사한 뒤 .git을 올려주면 된다. 
+git remote add <remote-name> <git address>
+git remote add origin https://github.com/HyeminJu95/practice.git
+
+# 연결 확인
+git remote -v
+
+2.  local -> staging Area
+git add <filename>
+git add --all 
+
+# 잘 되었는지 확인
+git status
+
+3. staging area -> commit
+git commit -m "깃을 처음 사용했어요"
+
+# commit 메세지 확인
+git log
+
+# commit 메세지를 수정
+git commit --amend
+
+4. Commit한 파일을 Push 해서 local -> 원격 저장소로 보내자
+
+# 현재 로컬에 있는 브랜치 목록 확인 (main)
+git branch 
+
+# 원격 저장소 이름 확인 (origin)
+git remote -v
+
+# Push
+#git push <remote_name> <- <branch_name>
+git push origin main
+
+5. 원격 저장소 접속 끊기
+git remote remove origin
